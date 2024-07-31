@@ -28,7 +28,7 @@ const Accordion = () => {
 
   return (
     <div className='wrapper'>
-    <button onClick={()=> setEnableMultiselection(!enableMultiselection) } >Multiple Selection</button>
+    <button onClick={()=> setEnableMultiselection((previousState)=> !previousState) } >{enableMultiselection ? "Multiple Selection" : "Single Selection"}</button>
         <div className='accordian'>
         <h1 className='header'>Accordian List</h1>
           { (data && data.length > 0) ? data.map((item)=> <div className='item' key={item.id}>
